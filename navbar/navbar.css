@@ -41,7 +41,7 @@ a {
   padding: 0 0.625rem;
 }
 
-.main-nav ul li a:hover {
+.main-nav .middle-nav li a:hover {
   color: #afb8c1;
 }
 
@@ -88,12 +88,71 @@ a {
   margin-right: 0.25rem;
 }
 
+.right-nav li {
+  position: relative;
+}
+
+.showDropDown {
+  display: block !important;
+}
+
+.drop-down .sub-menu-box {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  z-index: 3;
+  border-radius: 0.25rem;
+  top: 2rem;
+  right: 10%;
+}
+
+.sub-menu {
+  flex-direction: column;
+}
+
+.sub-menu li {
+  padding: 0.25rem 0.875rem !important;
+}
+
+.sub-menu li:hover {
+  background-color: #218bff;
+  cursor: pointer;
+}
+
+.sub-menu li:hover a {
+  color: #fff;
+}
+
+.sub-menu .single-link {
+  padding: 0.25rem 0.875rem !important;
+}
+
+.sub-menu .single-link:hover {
+  background-color: #218bff;
+  cursor: pointer;
+}
+
+.sub-menu .single-link:hover a {
+  color: #fff;
+}
+
+.sub-menu a {
+  color: #24292f;
+}
+
 .menu-btn {
   cursor: pointer;
   position: absolute;
   right: 1.875rem;
   z-index: 2;
   display: none;
+}
+
+.submenu-border {
+  border-bottom: #ccc solid 1px;
 }
 
 @media (max-width: 780px) {
@@ -124,7 +183,7 @@ a {
     flex-direction: column;
   }
 
-  .middle-nav .middle-nav-menu li {
+  .middle-nav .middle-nav-menu > li {
     padding: 10px;
     border-bottom: #ccc solid 1px;
   }

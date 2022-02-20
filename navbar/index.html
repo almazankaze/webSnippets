@@ -39,6 +39,9 @@
             <li><a href="#">Issues</a></li>
             <li><a href="#">Marketplace</a></li>
             <li><a href="#">Explore</a></li>
+            <li class="mobile-nav-link">
+              <a href="#">More</a>
+            </li>
             <li class="mobile-nav-link"><a href="#">Settings</a></li>
             <li class="mobile-nav-link">
               <a href="#"><i class="fa-solid fa-user-gear"></i>almazankaze</a>
@@ -58,13 +61,32 @@
           <li>
             <a href="#"><i class="fa-solid fa-plus fa-lg"></i></a>
           </li>
-          <li>
+
+          <li class="drop-down" id="settings">
             <a href="#"><i class="fa-solid fa-user-gear fa-lg"></i></a>
+            <div class="sub-menu-box">
+              <ul class="sub-menu">
+                <li><a href="#">Pulls</a></li>
+                <li><a href="#">Issues</a></li>
+                <li><a href="#">Marketplace</a></li>
+              </ul>
+              <div class="submenu-border"></div>
+              <ul class="sub-menu">
+                <li><a href="#">Pulls</a></li>
+                <li><a href="#">Issues</a></li>
+                <li><a href="#">Marketplace</a></li>
+              </ul>
+              <div class="submenu-border"></div>
+              <div class="sub-menu">
+                <div class="single-link"><a href="#">Sign out</a></div>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./navbar.js"></script>
   </body>
 </html>
