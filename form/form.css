@@ -1,0 +1,45 @@
+.form-container {
+  height: fit-content;
+  width: 420px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.post-form {
+  width: 100%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+
+.input-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-error {
+  display: none;
+  color: hsl(0, 100%, 74%);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.post-input {
+  border-radius: 5px;
+  border: 1px solid hsl(246, 25%, 77%);
+  outline-color: hsl(249, 10%, 26%);
+  padding: 0.75em;
+  width: 100%;
+}
+
+@media (max-width: 650px) {
+  .form-container {
+    width: 320px;
+  }
+}
