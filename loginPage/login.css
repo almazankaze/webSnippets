@@ -31,6 +31,9 @@ form .form-input {
   margin: 2rem 0;
 }
 
+.form-input:focus-within {
+}
+
 .form-input input {
   width: 100%;
   padding: 0 5px;
@@ -47,18 +50,21 @@ form .form-input {
   color: var(--gray-500);
   transform: translateY(-50%);
   pointer-events: none;
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
-.form-input span {
+.form-input span::after {
   content: "";
+  display: block;
+  margin: 0.125rem auto 0;
   position: absolute;
-  top: 40px;
+  top: 38px;
   left: 0;
-  width: 0%;
+  width: 100%;
+  transform: scaleX(0);
   height: 2px;
   background: #0c75b6;
-  transition: 0.2s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 .form-input input:focus ~ label,
@@ -68,9 +74,9 @@ form .form-input {
   font-size: 0.75rem;
 }
 
-.form-input input:focus ~ span,
-.form-input input:valid ~ span {
-  width: 100%;
+.form-input input:focus ~ span::after,
+.form-input input:valid ~ span::after {
+  transform: scaleX(1);
 }
 
 .form-options {
@@ -97,6 +103,23 @@ form .form-input {
   color: #0c75b6;
 }
 
+.or-divider {
+  width: 100%;
+  position: relative;
+  margin: 2.5rem 0;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-400);
+  line-height: 0.1em;
+}
+
+.or-divider span {
+  background: var(--white);
+  padding: 0 1rem;
+}
+
 .signup-toggle {
   font-size: 0.813rem;
   margin-top: 1rem;
@@ -117,6 +140,12 @@ form .form-input {
   padding: 1em 0;
   font-weight: 700;
   cursor: pointer;
+}
+
+.google-login-btn {
+  border-radius: 0;
+  text-transform: none;
+  background-color: #1c8adb;
 }
 
 @media (max-width: 600px) {
