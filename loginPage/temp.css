@@ -1,0 +1,149 @@
+.form-page {
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 520px;
+  background-color: var(--white);
+  padding: 2.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.form-container form {
+  width: 320px;
+}
+
+.form-heading {
+  font-weight: 800;
+}
+
+form .form-input {
+  position: relative;
+  border-bottom: 2px solid var(--gray-500);
+  margin: 2rem 0;
+}
+
+.form-input input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.form-input label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: var(--gray-500);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.form-input span {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0c75b6;
+  transition: 0.2s ease-in-out;
+}
+
+.form-input input:focus ~ label,
+.form-input input:valid ~ label {
+  top: -5px;
+  color: #0c75b6;
+  font-size: 0.75rem;
+}
+
+.form-input input:focus ~ span,
+.form-input input:valid ~ span {
+  width: 100%;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5px 24px;
+}
+
+.remember-check {
+  display: flex;
+  align-items: center;
+  font-size: 0.813rem;
+  font-weight: 700;
+}
+
+.remember-check input {
+  margin-right: 0.25rem;
+}
+
+.forgot {
+  font-size: 0.813rem;
+  font-weight: 700;
+  color: #0c75b6;
+}
+
+.signup-toggle {
+  font-size: 0.813rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.signup-toggle a {
+  font-weight: 700;
+  color: #0c75b6;
+}
+
+.form-btn {
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--white);
+  text-transform: uppercase;
+  padding: 0.875rem 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    width: 420px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    width: 100%;
+  }
+
+  .form-container form {
+    width: 280px;
+  }
+}
+
+@media (max-width: 350px) {
+  .form-container {
+    border-radius: 0;
+  }
+
+  .form-container form {
+    width: 250px;
+  }
+}
