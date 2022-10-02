@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem;
 }
 
 .form-container form {
@@ -22,16 +23,13 @@
 }
 
 .form-heading {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 form .form-input {
   position: relative;
   border-bottom: 2px solid var(--gray-500);
   margin: 2rem 0;
-}
-
-.form-input:focus-within {
 }
 
 .form-input input {
@@ -50,21 +48,18 @@ form .form-input {
   color: var(--gray-500);
   transform: translateY(-50%);
   pointer-events: none;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.form-input span::after {
+.form-input span {
   content: "";
-  display: block;
-  margin: 0.125rem auto 0;
   position: absolute;
-  top: 38px;
+  top: 40px;
   left: 0;
-  width: 100%;
-  transform: scaleX(0);
+  width: 0%;
   height: 2px;
   background: #0c75b6;
-  transition: transform 0.3s ease;
+  transition: 0.2s ease-in-out;
 }
 
 .form-input input:focus ~ label,
@@ -74,16 +69,16 @@ form .form-input {
   font-size: 0.75rem;
 }
 
-.form-input input:focus ~ span::after,
-.form-input input:valid ~ span::after {
-  transform: scaleX(1);
+.form-input input:focus ~ span,
+.form-input input:valid ~ span {
+  width: 100%;
 }
 
 .form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -5px 5px 20px 5px;
+  margin: 0 5px 24px;
 }
 
 .remember-check {
@@ -103,26 +98,10 @@ form .form-input {
   color: #0c75b6;
 }
 
-.or-divider {
-  width: 100%;
-  position: relative;
-  margin: 2.5rem 0;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-align: center;
-  border-bottom: 1px solid var(--gray-400);
-  line-height: 0.1em;
-}
-
-.or-divider span {
-  background: var(--white);
-  padding: 0 1rem;
-}
-
 .signup-toggle {
   font-size: 0.813rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .signup-toggle a {
@@ -137,69 +116,34 @@ form .form-input {
   background-color: var(--main-color);
   color: var(--white);
   text-transform: uppercase;
-  padding: 1em 0;
+  padding: 0.875rem 0;
   font-weight: 700;
+  font-size: 0.875rem;
   cursor: pointer;
-}
-
-.google-login-btn {
-  border-radius: 0;
-  text-transform: none;
-  background-color: #1c8adb;
 }
 
 @media (max-width: 600px) {
   .form-container {
     width: 420px;
-    margin: 0 1rem;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   .form-container {
-    width: 300px;
+    width: 100%;
+  }
+
+  .form-container form {
+    width: 280px;
+  }
+}
+
+@media (max-width: 350px) {
+  .form-container {
+    border-radius: 0;
   }
 
   .form-container form {
     width: 250px;
-  }
-
-  .form-heading {
-    font-size: 1.625rem;
-  }
-
-  .form-input label {
-    font-size: 0.875rem;
-  }
-
-  .remember-check,
-  .forgot,
-  .signup-toggle {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .form-container {
-    width: 260px;
-  }
-
-  .form-container form {
-    width: 240px;
-  }
-
-  .form-heading {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-  }
-
-  .form-input label {
-    font-size: 0.875rem;
-  }
-
-  .remember-check,
-  .forgot,
-  .signup-toggle {
-    font-size: 0.625rem;
   }
 }
