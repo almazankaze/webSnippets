@@ -1,0 +1,27 @@
+.list-container {
+  padding: 1rem;
+  list-style: none;
+}
+
+.list-item {
+  padding: 1rem 0.5rem;
+  background-color: green;
+  border: 1px solid var(--gray-500);
+  color: var(--gray-100);
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-btn {
+  background: none;
+  color: blue;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
