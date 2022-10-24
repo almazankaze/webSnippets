@@ -1,7 +1,33 @@
 const list = document.querySelector("#data-list");
 
+// get users
+const getUsers = async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await res.json();
+
+    return data;
+  } catch(e) {
+    return [];
+  }
+}
+
+// returns a list of posts
+const getPosts = async (userId) => {
+
+  try {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+    const data = await res.json();
+
+    return data;
+
+  } catch (e) {
+    return [];
+  }
+};
+
 // create a new li element
-const getNewListItem = (data) => {
+const getNewListItem = async (data) => {
   // create li
   const el = document.createElement("li");
   el.classList.add("list-item");
@@ -11,43 +37,57 @@ const getNewListItem = (data) => {
   titleDiv.classList.add("title-container");
 
   const h4 = document.createElement("h4");
-  h4.innerText = data.attributes.canonicalTitle;
+  h4.innerText = data.name;
 
   const btn = document.createElement("button");
   btn.classList.add("list-btn");
-  btn.innerText = "see more";
+  btn.innerHTML = "&#8250;";
 
   titleDiv.appendChild(h4);
   titleDiv.appendChild(btn);
 
+  const posts = await getPosts(data.id);
+  const subBox = document.createElement("ul");
+  subBox.classList.add("sub-box");
+  subBox.classList.add("list-container");
+
+  posts.forEach((post) => {
+    const li = document.createElement("li");
+    li.classList.add("sub-list-item");
+    const h4 = document.createElement("h4");
+    const p = document.createElement("p");
+    h4.innerText = post.title;
+    p.innerText = post.body;
+    li.append(h4, p);
+    subBox.appendChild(li);
+  })
+
+
   // add elements to li
   el.appendChild(titleDiv);
+  el.appendChild(subBox);
+
+  btn.addEventListener("click", () => {
+    subBox.classList.toggle("open");
+  })
 
   return el;
+  
 };
 
-const getData = async () => {
-  try {
-    const res = await fetch("https://kitsu.io/api/edge/anime");
-    const obj = await res.json();
 
-    const fragment = new DocumentFragment();
+const createList = (users) => {
 
-    obj.data.forEach((item) => {
-      fragment.appendChild(getNewListItem(item));
-    });
-
-    list.appendChild(fragment);
-
-    // add event to all buttons
-    document.querySelectorAll(".list-btn").forEach((btn, key) => {
-        btn.addEventListener("click", () => {
-            console.log(btn.previousSibling.innerText);
-        })
-    })
-  } catch (e) {
-    list.innerHTML = "<h2>Error getting data</h2>";
-  }
+  users.forEach( async (user) => {
+    const el = await getNewListItem(user);
+    list.append(el);
+  });
 };
 
-getData();
+
+init = async () => {
+  const users = await getUsers();
+  createList(users);
+}
+
+init();
