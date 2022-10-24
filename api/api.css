@@ -40,7 +40,7 @@ p {
 
 .sub-box.open {
   height: auto;
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: scroll;
 }
 

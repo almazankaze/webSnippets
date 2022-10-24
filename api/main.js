@@ -7,20 +7,20 @@ const getUsers = async () => {
     const data = await res.json();
 
     return data;
-  } catch(e) {
+  } catch (e) {
     return [];
   }
-}
+};
 
 // returns a list of posts
 const getPosts = async (userId) => {
-
   try {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+    const res = await fetch(
+      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+    );
     const data = await res.json();
 
     return data;
-
   } catch (e) {
     return [];
   }
@@ -60,34 +60,43 @@ const getNewListItem = async (data) => {
     p.innerText = post.body;
     li.append(h4, p);
     subBox.appendChild(li);
-  })
-
+  });
 
   // add elements to li
   el.appendChild(titleDiv);
   el.appendChild(subBox);
 
   btn.addEventListener("click", () => {
-    subBox.classList.toggle("open");
-  })
+    const old = document.querySelector(".open");
+
+    if(old === subBox) {
+      subBox.classList.remove("open");
+    } else {
+
+      if(old) {
+        old.classList.remove("open");
+      }
+      subBox.classList.toggle("open");
+    }
+  });
 
   return el;
-  
 };
 
+const createList = async (users) => {
+  const fragment = new DocumentFragment();
 
-const createList = (users) => {
+  for (let i = 0; i < users.length; i++) {
+    const el = await getNewListItem(users[i]);
+    fragment.appendChild(el);
+  }
 
-  users.forEach( async (user) => {
-    const el = await getNewListItem(user);
-    list.append(el);
-  });
+  list.appendChild(fragment);
 };
-
 
 init = async () => {
   const users = await getUsers();
   createList(users);
-}
+};
 
 init();
