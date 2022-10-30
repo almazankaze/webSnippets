@@ -4,9 +4,14 @@ const list = document.querySelector("#data-list");
 const getUsers = async () => {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await res.json();
 
-    return data;
+    if(!res.ok) throw new Error("something went wrong!");
+
+    else {
+      const data = await res.json();
+
+      return data;
+    }
   } catch (e) {
     return [];
   }
@@ -18,9 +23,13 @@ const getPosts = async (userId) => {
     const res = await fetch(
       `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
     );
-    const data = await res.json();
 
-    return data;
+    if(!res.ok) throw new Error("could not get posts");
+
+    else {
+      const data = await res.json();
+      return data;
+    }
   } catch (e) {
     return [];
   }
