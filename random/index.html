@@ -11,30 +11,55 @@
     <link rel="stylesheet" href="./random.css" />
   </head>
   <body>
-    <div class="cart-grid-container">
-      <div class="cart-controller">Hello</div>
-      <div class="cart-checkout-info">
-        <h3>Summary of your purchase:</h3>
-        <div class="amounts-container">
-          <div class="amount">
-            <p>Subtotal:</p>
-            <p>$37.00</p>
+    <div class="container">
+      <div class="settings">
+        <div class="settings-menu">
+          <div class="settings-user-info">
+            <h3>John Almazan</h3>
           </div>
-          <div class="amount">
-            <p>Taxes:</p>
-            <p>$4.00</p>
-          </div>
-          <div class="amount">
-            <p>Shipping:</p>
-            <p>$0.00</p>
-          </div>
+          <ul class="settings-menu-buttons">
+            <li class="menu-button active">My Account</li>
+            <li class="menu-button">My Address</li>
+            <li class="menu-button">My Orders</li>
+            <li class="menu-button">Payment Methods</li>
+            <li class="menu-button">Support Tickets</li>
+            <li class="menu-button">Log out</li>
+          </ul>
         </div>
-        <hr class="cart-checkout-divider" />
-        <div class="total-container">
-          <h3>TOTAL</h3>
-          <h3>$41.00</h3>
+        <div class="my-account">
+          <h3>My Account</h3>
+          <div class="my-account-form-container">
+            <form class="my-account-form">
+              <div class="my-account-inputs-container">
+                <div class="my-account-input-container">
+                  <label>First Name</label>
+                  <input type="text" class="my-account-input" />
+                </div>
+                <div class="my-account-input-container">
+                  <label>Last Name</label>
+                  <input type="text" class="my-account-input" />
+                </div>
+              </div>
+
+              <div class="my-account-inputs-container">
+                <div class="my-account-input-container">
+                  <label>Phone Number</label>
+                  <input type="text" class="my-account-input" />
+                </div>
+                <div class="my-account-input-container">
+                  <label>Other</label>
+                  <input type="text" class="my-account-input" />
+                </div>
+              </div>
+              <div class="my-account-input-container">
+                <label>Email</label>
+                <input type="text" class="my-account-input" />
+              </div>
+            </form>
+          </div>
+          <div class="my-account-button">Change Password</div>
+          <div class="my-account-button">Deactivate Account</div>
         </div>
-        <button type="button" class="btn">Go to Checkout</button>
       </div>
     </div>
   </body>
