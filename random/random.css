@@ -1,108 +1,116 @@
-.settings {
+.gridwrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0.5rem;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: #444;
 }
 
-.settings-menu {
-    background-color: var(--white);
-    border-radius: 10px;
+.box {
+    color: #fff;
 }
 
-.settings-user-info {
-    padding: 1.4rem 0;
-    text-align: center;
+.a {
+    grid-column:1 /span 2;
+    grid-row: 1 /span 2;
+    background-color: blue;
 }
 
-.settings-menu-buttons {
-    list-style: none;
-    padding: 1rem 1.25rem;
+.b {
+    grid-column: 3 /span 2;
+    grid-row: 1 ;
+    background-color: brown;
 }
 
-.menu-button {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.75rem 0;
-    border-bottom: var(--gray-400) solid 1px;
-    transition: background-color 0.3s linear;
+.c {
+    grid-column: 3 /span 2;
+    grid-row: 2 ;
+    background-color: yellowgreen;
 }
 
-.settings-menu-buttons .menu-button:last-child {
-    border-bottom: none;
-}
+.item {
+    display: inline-block;
+  }
 
-.menu-button:hover {
-    background-color: var(--gray-200);
-}
-
-.active {
-    background-color: var(--gray-200);
-}
-
-.my-account {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-}
-
-.my-account-form-container {
-    margin-top: 1.5rem;
-}
-
-.my-account-inputs-container {
-    display: flex;
-}
-
-.my-account-inputs-container .my-account-input-container:first-child {
-    margin-right: 0.5rem;
-}
-
-.my-account-input-container {
+.featured-image {
+    float: left;
+    width: 40%;
+    padding-right: 15px;
+  }
+  
+  .featured-image img {
     width: 100%;
-    margin-bottom: 0.625rem;
-}
+  }
 
-.my-account-input {
-    width: 100%;
-    padding: 1.25rem 0.625rem 1rem;
-    height: 2rem;
-    border: 2px solid var(--gray-400);
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
-}
+  .a .featured-image img {
+    height: 333px;
+  }
 
-.my-account-input:focus {
-    border: 2px solid var(--main-color);
-}
+  .b .featured-image img {
+    height: 160px;
+    max-width: 100%;
+  }
 
-.my-account-button {
-    cursor: pointer;
-    background-color: var(--gray-200);
-    padding: 0.625rem;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    transition: background-color 0.3s linear;
-}
+  .c .featured-image img {
+    height: 160px;
+    max-width: 100%;
+  }
 
-.my-account-button:hover {
-    background-color: var(--gray-400);
-}
+  .description {
+    float: left;
+    width: 60%;
+  }
 
-@media (max-width: 1200px) {
-    .settings {
+@media (max-width: 992px) {
+    .gridwrapper {
         grid-template-columns: 1fr;
+        
     }
+
+    .a {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .b {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .c {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .featured-image {
+        width: 30%;
+    }
+
+
+
+    .featured-image img {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+      }
+
+      .description {
+        
+        width: 70%;
+      }
 }
 
-@media (max-width: 550px) {
-    .my-account-inputs-container {
-        display: flex;
-        flex-direction: column;
+@media screen and (max-width: 620px) {
+    .featured-image {
+        text-align: center;
+      width: 100%;
     }
-    
-    .my-account-inputs-container .my-account-input-container:first-child {
-        margin-right: 0;
+    .featured-image img {
+      width: 200px;
+      height: auto;
     }
-}
+    .description {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
