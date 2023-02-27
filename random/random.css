@@ -1,3 +1,21 @@
+.small-img-container {
+  width: 180px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.small-img-container img{
+  width: 180px;
+}
+
+.large-img-container {
+  width: 550px;
+  height: 640px;
+  display: grid;
+  place-items: center;
+}
+
 .gridwrapper {
     display: grid;
     grid-gap: 10px;
