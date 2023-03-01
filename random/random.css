@@ -1,153 +1,19 @@
-.service-wrapper {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 2.5rem 0.5rem;
-}
-
-.service-box {
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-}
-
-.service-1 {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  background-color: var(--white);
-
-}
-
-.service-2 {
-  grid-column: 3 / span 2;
-  grid-row: 1;
-  background-color: var(--white);
-
-}
-
-.service-3 {
-  grid-column: 3 / span 2;
-  grid-row: 2;
-  background-color: var(--white);
-
-}
-
-.service-item {
-  display:flex;
-  align-items: center;
-}
-
-.service-image {
-  cursor: pointer;
-}
-
-.service-image img {
-  width: 100%;
-  display: block;
-}
-
-.service-1 .service-image img {
-  height: 380px;
-}
-
-.service-2 .service-image img {
-  height: 185px;
-}
-
-.service-3 .service-image img {
-  height: 185px;
-}
-
-.service-description {
-  width: 60%;
+.comments-section {
   padding: 0 1rem;
 }
 
-.service-description p {
-  margin-top: 0.25rem;
-  font-size: 14px;
+.author {
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 1100px) {
-  .service-wrapper {
-    grid-template-columns: 300px 1fr;
-  }
-  
-  .service-1 {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    
-  }
-
-  .service-2 {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    
-  }
-
-  .service-3 {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-    
-  }
-
-  .service-1 .service-image img {
-    height: 278px;
-  }
-
+.author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 12px;
 }
 
-@media (max-width: 640px) {
-
-  .service-1 .service-image img {
-    height: 180px;
-  }
-
-  .service-2 .service-image img {
-    height: 120px;
-  }
-
-  .service-3 .service-image img {
-    height: 120px;
-  }
-}
-
-@media (max-width: 420px) {
-
-  .service-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .service-1 .service-image img {
-    height: 150px;
-  }
-
-  .service-2 .service-image img {
-    height: 100px;
-  }
-
-  .service-3 .service-image img {
-    height: 100px;
-  }
-
-  .service-description {
-    width: 80%;
-  }
-
-  .service-description h3 {
-    font-size: 1rem;
-  }
-
-  .service-description p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 320px) {
-
-  .service-description h3 {
-    font-size: 15;
-  }
-
-  .service-description p {
-    font-size: 10px;
-  }
+.author-rating {
+  margin: 8px 0;
 }
